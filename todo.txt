@@ -1,0 +1,26 @@
+##### General #####
+Change Logo
+Setup email account
+Add a correct phone number
+Social media icons and accounts
+Add terms of use and privacy
+Navigation items activeness
+
+###### Home Page  #######
+Add appopriate meta data
+Fill Services
+Change Bulk and Individual Booking
+Remove Eric name
+Change partner images
+
+###### Service Page  #######
+change all inappropriate images
+
+###### Contact Page  #######
+Remove inapporiate text
+Change Number and text
+Remove advertisement
+
+###### About us Page  #######
+Remove advertisement
+Add vision and mission

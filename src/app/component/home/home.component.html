@@ -1,0 +1,220 @@
+<main class="main" role="main">
+    <!-- Intro -->
+    <div class="intro">
+      <div class="wrap">
+        <div class="textwidget">
+          <h1 class="wow fadeInDown">welcome to tedbus</h1>
+          <h2 class="wow fadeInUp">let's ride together</h2>
+          <div class="actions">
+            <!-- <a href="#services" title="Our services" class="btn large white wow fadeInLeft anchor">Our services</a> -->
+            <a href="#booking" title="Make a booking" class="btn large color wow fadeInRight anchor">Make a booking</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- //Intro -->
+    
+    <!-- Search -->
+    <div class="advanced-search color" id="booking">
+      <div class="wrap">
+        <form (ngSubmit)="findbus()">
+          <!-- Row -->
+          <div class="f-row">
+            <div class="form-group datepicker one-third">
+              <label for="dep-date">Departure date and time</label>
+              <input type="text" id="dep-date" name="dep_date" [(ngModel)]="outcome.dep_date" autocomplete="off" required/>
+            </div>
+            <div class="form-group select one-third">
+              <label>Pick up location</label>
+              <select name="pickup" [(ngModel)]="outcome.pickup" required="true">
+                <option selected>&nbsp;</option>
+                <optgroup label="Ashanti Region">
+                  <option value="Asafo Market">Asafo Market</option>
+                  <option value="Tech Junction">Tech Junction</option>
+                </optgroup>
+                <optgroup label="Greater Accra">
+                  <option value="Circle">Circle</option>
+                </optgroup>
+              </select>
+            </div>
+            <div class="form-group select one-third">
+              <label>Drop off location</label>
+              <select name="dropoff" [(ngModel)]="outcome.dropoff" required>
+                <option selected>&nbsp;</option>
+                <optgroup label="Ashanti Region">
+                  <option value="Asafo Market">Asafo Market</option>
+                  <option value="Tech Junction">Tech Junction</option>
+                </optgroup>
+                <optgroup label="Greater Accra">
+                  <option value="Circle">Circle</option>
+                </optgroup>
+              </select>
+            </div>
+          </div>
+          <!-- //Row -->
+          <!-- Row -->
+          <div class="f-row">
+            <div class="form-group spinner">
+              <label for="people">How many people <small>(including children)</small>?</label>
+              <input type="number" id="people" min="1" name="people" [(ngModel)]="outcome.people" required />
+            </div>
+            <!-- <div class="form-group radios">
+              <div>
+                <input type="radio" name="radio" id="return" value="return" />
+                <label for="return">Return</label>
+              </div>
+              <div>
+                <input type="radio" name="radio" id="oneway" value="oneway" checked />
+                <label for="oneway">One way</label>
+              </div>
+            </div> -->
+            <div class="form-group right">
+              <button type="submit" class="btn large black">Find a bus</button>
+            </div>
+          </div>
+          <!--// Row -->
+        </form>
+      </div>
+    </div>
+    <!-- //Search -->
+    <!-- Services iconic -->
+    <div class="services iconic white">
+      <div class="wrap">
+        <div class="row">
+          <!-- Item -->
+          <div class="one-third wow fadeIn">
+            <span class="circle"><span class="icon  icon-themeenergy_savings"></span></span>
+            <h3>Fixed rates</h3>
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy  tinc dolore magna.</p>
+          </div>
+          <!-- //Item -->
+          
+          <!-- Item -->
+          <div class="one-third wow fadeIn" data-wow-delay=".2s">
+            <span class="circle"><span class="icon icon-themeenergy_lockpad"></span></span>
+            <h3>Reliable Journey</h3>
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy  tinc dolore magna.</p>
+          </div>
+          <!-- //Item -->
+          
+          <!-- Item -->
+          <div class="one-third wow fadeIn" data-wow-delay=".4s">
+            <span class="circle"><span class="icon icon-themeenergy_open-wallet"></span></span>
+            <h3>No booking fees</h3>
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy  tinc dolore magna.</p>
+          </div>
+          <!-- //Item -->
+          
+          <!-- Item -->
+          <div class="one-third wow fadeIn">
+            <span class="circle"><span class="icon icon-themeenergy_heart"></span></span>
+            <h3>Free cancellation</h3>
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy  tinc dolore magna.</p>
+          </div>
+          <!-- //Item -->
+          
+          <!-- Item -->
+          <div class="one-third wow fadeIn" data-wow-delay=".2s">
+            <span class="circle"><span class="icon icon-themeenergy_magic-trick"></span></span>
+            <h3>Booking flexibility</h3>
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy  tinc dolore magna.</p>
+          </div>
+          <!-- //Item -->
+          
+          <!-- Item -->
+          <div class="one-third wow fadeIn" data-wow-delay=".4s">
+            <span class="circle"><span class="icon icon-themeenergy_call"></span></span>
+            <h3>24h customer service</h3>
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy  tinc dolore magna.</p>
+          </div>
+          <!-- //Item -->
+          
+          <!-- Item -->
+          <div class="one-third wow fadeIn">
+            <span class="circle"><span class="icon icon-themeenergy_cup"></span></span>
+            <h3>Award winning service</h3>
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy  tinc dolore magna.</p>
+          </div>
+          <!-- //Item -->
+          
+          <!-- Item -->
+          <div class="one-third wow fadeIn" data-wow-delay=".2s">
+            <span class="circle"><span class="icon icon-themeenergy_attach"></span></span>
+            <h3>Benefits for partners</h3>
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy  tinc dolore magna.</p>
+          </div>
+          <!-- //Item -->
+          
+          <!-- Item -->
+          <div class="one-third wow fadeIn" data-wow-delay=".4s">
+            <span class="circle"><span class="icon icon-themeenergy_stars"></span></span>
+            <h3>Quality vehicles</h3>
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy  tinc dolore magna.</p>
+          </div>
+          <!-- //Item -->
+        </div>
+      </div>
+    </div>
+    <!-- //Services iconic -->
+    <!-- Call to action -->
+    <div class="black cta">
+      <div class="wrap">
+        <p class="wow fadeInLeft text-center">OUR SERVICES</p>
+        
+      </div>
+    </div>
+    <!-- //Call to action -->
+    <!-- Services -->
+    <div class="services boxed white" id="services" style="margin-left: 25%;">
+      <!-- Item -->
+      <article  style="padding-right:30px"  class="one-fourth wow fadeIn" data-wow-delay=".2s">
+        <figure class="featured-image">
+          <img src="../../assets/images/uploads/img4.jpg" alt="" />
+          <div class="overlay">
+            <a [routerLink]="['/services']"   class="expand">+</a>
+          </div>
+        </figure>
+        <div class="details">
+          <h4><a [routerLink]="['/services']">Bulk Booking</a></h4>
+          <p>Tedbus is making the planning of your event, vacation trip, excursion and many more exciting and interesting in terms of securing a bus for your trip. Users can book a full bus for a program without going to any bus station.</p>
+          <a class="more" title="Read more" [routerLink]="['/services']">Read more</a>
+        </div>
+      </article>
+      <!-- //Item -->
+      <!-- Item -->
+      <article class="one-fourth wow fadeIn" data-wow-delay=".4s">
+        <figure class="featured-image">
+          <img src="../../assets/images/uploads/img2.jpg" alt="" />
+          <div class="overlay">
+            <a [routerLink]="['/services']" class="expand">+</a>
+          </div>
+        </figure>
+        <div class="details">
+          <h4><a [routerLink]="['/services']">Individual Booking</a></h4>
+          <p>Tedbus gives its users the chance to make a bus reservation of their choice. Users can make reservation for themselves or a group or family.</p>
+          <a class="more" title="Read more" [routerLink]="['/services']">Read more</a>
+        </div>
+      </article>
+      <!-- //Item -->
+    </div>
+    <!-- //Services -->
+    <!-- Testimonials -->
+    <div class="testimonials center black">
+      <div class="wrap">
+        <h6 class="wow fadeInDown"><i class="fa fa-quote-left"></i>Tedbus, your journey and safety is our prioprity!</h6>
+        <p class="wow fadeInUp">A wonderful journey begins from source. A Reliable bus service providers. </p>
+        <p class="meta wow fadeInUp">-Eric Heckford Bryan, CEO</p>
+      </div>
+    </div>
+    <!-- //Testimonials -->
+    <div class="partners white center">
+      <div class="wrap">
+        <h2 class="wow fadeIn">Our partners</h2>
+        <div class="one-fifth wow fadeIn"><a href="#"><img src="../../assets/images/uploads/logo1.jpg" alt="" /></a></div>
+        <div class="one-fifth wow fadeIn" data-wow-delay=".2s"><a href="#"><img src="../../assets/images/uploads/logo2.jpg" alt="" /></a></div>
+        <div class="one-fifth wow fadeIn" data-wow-delay=".4s"><a href="#"><img src="../../assets/images/uploads/logo3.jpg" alt="" /></a></div>
+        <div class="one-fifth wow fadeIn" data-wow-delay=".6s"><a href="#"><img src="../../assets/images/uploads/logo4.jpg" alt="" /></a></div>
+        <div class="one-fifth" data-wow-delay=".8s"><a href="#"><img src="../../assets/images/uploads/logo5.jpg" alt="" /></a></div>
+      </div>
+    </div>
+</main>

@@ -1,0 +1,83 @@
+<!-- Main -->
+<main class="main" role="main">
+    <!-- Page info -->
+    <header class="site-title color">
+        <div class="wrap">
+            <div class="container">
+                <h1>Contact us</h1>
+                <nav role="navigation" class="breadcrumbs">
+                    <ul>
+                        <li><a [routerLink]="['/']" title="Home">Home</a></li>
+                        <li>Contact</li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <!-- //Page info -->
+    
+    <!--- Google map -->
+    
+    <!--- //Google map -->
+    
+    <div class="wrap">
+        <div class="row">
+            
+            <!--- Content -->
+            <div class="full-width content textongrey">
+                <h2>Send us a message</h2>
+                <!-- <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit. All fields are required.</p> -->
+            </div>
+            <!--- //Content -->
+            
+            <!-- Form -->
+            <div class="three-fourth">
+                <form (ngSubmit)="submitData()" name="contactform" id="contactForms" action="">
+                    <div id="message"></div>
+                    <div class="f-row">
+                        <div class="one-half">
+                            <label for="name">Fullname</label>
+                            <input type="text" id="name" name="fullName" [(ngModel)]="contact.fullName"/>
+                        </div>
+                        <div class="one-half">
+                            <label for="email">Email address</label>
+                            <input type="email" id="email" name="email" [(ngModel)]="contact.email"/>
+                        </div>
+                    </div>
+                    <div class="f-row">
+                        <div class="full-width">
+                            <label for="comments">Message</label>
+                            <textarea id="comments" name="comments" [(ngModel)]="contact.comments"></textarea>
+                        </div>
+                    </div>
+                    <div class="f-row">
+                        <button  id="submit" name="submit" class="btn color medium right">Submit</button>
+                    </div>
+                </form>
+            </div>
+            <!-- //Form -->
+            
+            <!--- Sidebar -->
+            <aside class="one-fourth sidebar right">
+                <!-- Widget -->
+                <div class="widget">
+                    <h4>Need help booking?</h4>
+                    <div class="textwidget">
+                        <p>Call our customer services team on the number below to speak to one of our advisors who will help you with all of your needs.</p>
+                        <p class="contact-data"><span class="icon icon-themeenergy_call black"></span> +233 555 555 555</p>
+                    </div>
+                </div>
+                <!-- //Widget -->
+                
+                <!-- Widget -->
+                <!-- <div class="widget">
+                    <h4>Advertisment</h4>
+                    <a href="#"><img src="../../images/uploads/advertisment.jpg" alt="" /></a>
+                </div> -->
+                <!-- //Widget -->
+            </aside>
+            <!--- //Sidebar -->
+        </div>
+    </div>
+</main>
+<!-- //Main -->

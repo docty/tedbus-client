@@ -1,0 +1,108 @@
+<!-- Main -->
+<main class="main" role="main">
+    <!-- Search -->
+    <!-- <div class="output color twoway">
+        <div class="wrap">
+            <div>
+                <p>28.08.2014 <small>at</small> 10:00</p>
+                <p>Berlin Schonefeld Airport <small>to</small> Central Train Station</p>
+            </div>
+            
+            <div>
+                <p>02.09.2014 <small>at</small> 17:00</p>
+                <p>Berlin Central Train Station <small>to</small> Schonefeld Airport</p>
+            </div>
+        </div>
+    </div> -->
+    <!-- //Search -->
+    
+    <div class="wrap">
+        <div class="row">
+            <!--- Content -->
+            <div class="full-width content">
+                <h2>Passenger details</h2>
+                <p>Please ensure all of the required fields are completed at the time of booking. This information is imperative to ensure a smooth journey.<br />All fields are required.</p>
+            </div>
+            <!--- //Content -->
+            
+            <div class="three-fourth">
+                <form (ngSubmit)="submitPassenger()">
+                    <div class="f-row">
+                        <div class="one-half">
+                            <label for="fullname">Fullname</label>
+                            <input type="text" id="fullname" name="fullname" [(ngModel)]="passenger.fullname">
+                        </div>
+                        <div class="one-half">
+                            <label for="number">Mobile number</label>
+                            <input type="text" name="mobile" [(ngModel)]="passenger.phone" />
+                        </div>
+                    </div>
+                    <div class="f-row">
+                        <div class="one-half">
+                            <label for="email">Email address</label>
+                            <input type="email" name="email" [(ngModel)]="passenger.email" />
+                        </div>
+                        <div class="one-half">
+                            <label for="city">City</label>
+                            <input type="text" name="city" [(ngModel)]="passenger.city"/>
+                        </div>
+                    </div>
+                    
+                    <div class="f-row">
+                        <div class="one-half">
+                            <label for="payment">Select payment type</label>
+                            <select name="payment" [(ngModel)]="passenger.payment">
+                                <option value="Prepaid" selected>Prepaid</option>
+                                <option value="Postpaid">Postpaid</option>
+                            </select>
+                        </div>
+                        <div class="one-half">
+                            <label for="promo">Enter promotional discount code if any?</label>
+                            <input type="text" name="promo" [(ngModel)]="passenger.promo"/>
+                        </div>
+                    </div>
+                    
+                    <div class="actions">
+                        <a [routerLink]="['/search-bus']" class="btn medium back">Go back</a>
+                        <button type="submit"  class="btn medium color right">Continue</button>
+                    </div>
+                </form>
+            </div>
+            
+            <!--- Sidebar -->
+            <aside class="one-fourth sidebar right">
+                <!-- Widget -->
+                <div class="widget">
+                    <h4>Booking summary</h4>
+                    <div class="summary">
+                        <div>
+                            <h5>DEPARTURE</h5>
+                            <dl>
+                                <dt>Date</dt>
+                                <dd>{{outcome.dep_date}}</dd>
+                                <dt>From</dt>
+                                <dd>{{outcome.pickup}}</dd>
+                                <dt>To</dt>
+                                <dd>{{outcome.dropoff}}</dd>
+                                <dt>Vehicle</dt>
+                                <dd>{{bus.name}}</dd>
+                                <dt>Passenger</dt>
+                                <dd>{{outcome.people}}</dd>
+                                <dt>Price</dt>
+                                <dd>{{bus.price}}</dd>
+                            </dl>
+                        </div>
+
+                        <dl class="total">
+                            <dt>Total</dt>
+                            <dd>{{(bus.price) * (outcome.people)}} GHC</dd>
+                        </dl>
+                    </div>
+                </div>
+                <!-- //Widget -->
+            </aside>
+            <!--- //Sidebar -->
+        </div>
+    </div>
+</main>
+<!-- //Main -->
