@@ -20,7 +20,7 @@ export class FindbusComponent implements OnInit {
     this.outcome = this.sharedataService.outcome;
     if (this.outcome.dep_date === '' || this.outcome.pickup === '' ||
     this.outcome.dropoff === '' || this.outcome.people === '' ){
-      // this.router.navigateByUrl('/');
+      this.router.navigateByUrl('/');
     }
 
   }

@@ -7,7 +7,6 @@ Navigation items activeness
 
 ###### Home Page  #######
 Add appopriate meta data
-Fill Services
 Change Bulk and Individual Booking
 Remove Eric name
 Change partner images

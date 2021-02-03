@@ -46,7 +46,7 @@ export class ConfirmationComponent implements OnInit {
       },
       (isConfirm) => {
         if (isConfirm) {
-          swal('Congratulation!', 'You will be notified via email or mobile provided.', 'success');
+          swal('Congratulation!', 'You will be notified via email and mobile provided.', 'success');
           return this.bookService.sendBook().subscribe();
         } else {
           swal('Cancelled', 'Sorry, We are still waiting for you', 'error');
