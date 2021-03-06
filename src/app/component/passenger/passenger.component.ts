@@ -13,12 +13,10 @@ export class PassengerComponent implements OnInit {
   outcome: any;
   bus: any;
   passenger = {
-    fullname: '',
-    phone: '',
-    email: '',
-    city: '',
-    payment: '',
-    promo: ''
+    firstName: '',
+	lastName: '',
+    mobile: '',
+    email: ''
   };
   constructor(private sharedataService: SharedataService, private router: Router) { }
 

@@ -26,9 +26,8 @@ export class ConfirmationComponent implements OnInit {
 
     if (this.outcome.dep_date === '' || this.outcome.pickup === '' ||
     this.outcome.dropoff === '' || this.outcome.people === '' || this.bus.name === ''  ||
-    this.bus.price === '' || this.passenger.fullname === '' || this.passenger.phone === '' ||
-    this.passenger.payment === ''){
-       this.router.navigateByUrl('/');
+    this.bus.price === '' || this.passenger.firstName === '' || this.passenger.mobile === '' ){
+       //this.router.navigateByUrl('/');
     }
   }
 

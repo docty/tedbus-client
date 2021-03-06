@@ -20,11 +20,9 @@ export class SharedataService {
   };
 
   passenger = {
-    fullname : '',
-    phone : '',
+    firstName : '',
+    mobile : '',
     email : '',
-    city: '',
-    payment: '',
-    promo : ''
+	lastName: ''
   };
 }
