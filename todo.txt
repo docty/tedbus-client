@@ -12,7 +12,7 @@ Remove Eric name
 Change partner images
 
 ###### Service Page  #######
-change all inappropriate images
+change all inappropriate images(!)
 
 ###### Contact Page  #######
 Remove inapporiate text
