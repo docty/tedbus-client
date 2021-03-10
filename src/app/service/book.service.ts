@@ -7,7 +7,7 @@ import { SharedataService } from './sharedata.service';
 })
 export class BookService {
 
-  url = 'http://127.0.0.1:8000/api';
+  url = 'https://tedbusadmin.herokuapp.com/api';
   constructor(private shareData: SharedataService, private httpCient: HttpClient) { }
 
   sendClient(){

@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ContactService {
 
-  url = 'http://127.0.0.1:8000/api';
+  url = 'https://tedbusadmin.herokuapp.com/api';
   constructor(private httpCient: HttpClient) { }
 
 
