@@ -7,7 +7,7 @@ import { SharedataService } from './sharedata.service';
 })
 export class BookService {
 
-  url = 'https://tedbusadmin.herokuapp.com/api';
+  url = 'http://127.0.0.1:8000/api';
   constructor(private shareData: SharedataService, private httpCient: HttpClient) { }
 
   sendClient(){
@@ -27,7 +27,8 @@ export class BookService {
       passenger: this.shareData.outcome.people,
       busName: this.shareData.bus.name,
       price: this.shareData.bus.price,
-      depDate: this.shareData.outcome.dep_date
+      depDate: this.shareData.outcome.dep_date,
+      mobile: this.shareData.passenger.mobile
     };
 	this.sendClient().subscribe();
     return this.httpCient.post(`${this.url}/bookings`, data);
