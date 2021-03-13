@@ -11,27 +11,22 @@ import { Router } from '@angular/router';
 export class FindbusComponent implements OnInit {
 
   constructor(private sharedataService: SharedataService, private router: Router) { }
-  outcome: any;
-  buses = [
-    {name: ' VIP', price: '54.00'},
-    {name: ' STC', price: '40.00'}
+  
+  public buses = [
+    {url: './../../../assets/images/learning/vip.jpg', name: ' VIP', price: '54.00', estimatedTime: '50mins'},
+    {url: './../assets/images/learning/stc-001.jpg', name: ' STC', price: '40.00', estimatedTime: '1hr 25mins'}
   ];
+
   ngOnInit(): void {
-    this.outcome = this.sharedataService.outcome;
-    if (this.outcome.dep_date === '' || this.outcome.pickup === '' ||
-    this.outcome.dropoff === '' || this.outcome.people === '' ){
+    const { outcome } = this.sharedataService;
+    const verify = Object.values(outcome).every((item:string) => item !== '');
+    if (!verify){
       this.router.navigateByUrl('/');
     }
-
   }
 
   busType($event){
-    if ($event === 1) {
-      this.sharedataService.bus = this.buses[0];
-    }
-    else {
-      this.sharedataService.bus = this.buses[1];
-    }
+    this.sharedataService.bus = this.buses.find(item => item.name === $event);
     this.router.navigateByUrl('/book-1');
   }
 

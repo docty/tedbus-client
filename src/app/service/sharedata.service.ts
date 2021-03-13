@@ -5,24 +5,42 @@ import { Injectable } from '@angular/core';
 })
 export class SharedataService {
 
-  constructor() { }
 
-  outcome = {
-    dep_date : '',
+  public outcome: IOutcome = {
+    depDate : '',
     pickup: '',
     dropoff: '',
     people: ''
   };
 
-  bus = {
+  public bus: IBus = {
     name : '',
     price : ''
   };
 
-  passenger = {
+  public passenger: IPassenger = {
     firstName : '',
     mobile : '',
     email : '',
-	lastName: ''
+	  lastName: ''
   };
+}
+
+interface IOutcome {
+  depDate : string;
+  pickup: string;
+  dropoff: string;
+  people: string;  
+} 
+
+interface IBus {
+  name: string;
+  price: string;
+}
+
+interface IPassenger {
+  firstName : string;
+  mobile : string;
+  email : string;
+  lastName: string;
 }
