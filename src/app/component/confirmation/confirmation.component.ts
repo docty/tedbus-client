@@ -32,7 +32,7 @@ export class ConfirmationComponent implements OnInit {
   }
 
   payment(){
-    this.bookService.proceedToPayment();
+    this.bookService.proceed();
   }
 
   getTotal(people: string, price: string){

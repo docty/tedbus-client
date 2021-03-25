@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { SharedataService } from './sharedata.service';
 declare var swal: any;
 declare var PaystackPop: any;
+declare var grecaptcha: any;
 
 @Injectable({
   providedIn: 'root'
@@ -40,15 +41,13 @@ export class BookService {
 
   proceedToPayment(){
     const handler = PaystackPop.setup({
-      key: 'pk_test_9e227a7e08906538d31690840dec472d31f5313a', // Replace with your public key
+      key: 'pk_test_9e227a7e08906538d31690840dec472d31f5313a',
       email: this.shareData.passenger.email,
-      amount: parseFloat(this.shareData.bus.price) * 100, // the amount value is multiplied by 100 to convert to the lowest currency unit
+      amount: parseFloat(this.shareData.outcome.people) *  parseFloat(this.shareData.bus.price) * 100,
       currency: 'GHS',
-      ref: ''+Math.floor((Math.random() * 1000000000) + 1), // Replace with a reference you generated
-      callback: (response) => {
-        //this happens after the payment is completed successfully
+      ref: ''+Math.floor((Math.random() * 1000000000) + 1),
+      callback: (response: any) => {
         this.sendBook(response.reference, response.transaction).subscribe();
-        //const reference = response.reference;
         swal('Congratulation!', 'You will be notified via mobile provided.', 'success');
         
         // message: "Approved"
@@ -64,5 +63,24 @@ export class BookService {
       },
     });
     handler.openIframe();
+  }
+
+  recaptching() {
+    grecaptcha.ready(() => {
+      grecaptcha.execute('6LeWRo4aAAAAAPPvTVP3dz-p9wQAnUEZRTsqYyuQ')
+      .then((token: any) => {
+        this.httpCient.post(`${this.url}/token-verify`, {token: token}).subscribe((result) => {
+			    if (result){
+            this.proceedToPayment();
+          }else{
+            swal('Sorry!', 'Please try again', 'fail');
+          }
+		    });
+      });
+    });  
+  }
+
+  proceed(){
+    this.recaptching();
   }
 }
