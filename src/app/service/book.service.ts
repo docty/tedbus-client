@@ -83,4 +83,9 @@ export class BookService {
   proceed(){
     this.recaptching();
   }
+
+  getBus(){
+	 return this.httpCient.get(`${this.url}/all-bus`);  
+  }
+
 }

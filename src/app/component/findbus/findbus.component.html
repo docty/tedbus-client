@@ -6,11 +6,11 @@
             <div class="full-width content">
                 <h2>Select bus for your DEPARTURE</h2>
                 <div class="results">
-                    <article class="result" *ngFor="let item of buses">
-                        <div class="one-fourth heightfix"><img src={{item.url}} alt="" /></div>
+                    <article class="result" *ngFor="let item of buses; let i=index">
+                        <div class="one-fourth heightfix"><img src={{item[objectKeys(item)[0]][0].url}} alt="" /></div>
                         <div class="one-half heightfix">
-                             <h3>{{item.name}} BUS </h3><!-- <a href="javascript:void(0)" class="trigger color" title="Read more">?</a></h3> -->
-                            <ul>
+                             <h3>{{objectKeys(item)[0]}} BUS </h3><!-- <a href="javascript:void(0)" class="trigger color" title="Read more">?</a></h3> -->
+                            <ul style="height: 113px;">
                                 <li>
                                     <span class="icon icon-themeenergy_user-3"></span>
                                     <p>Air-Condition</p>
@@ -24,12 +24,15 @@
                                     <p>Estimated time <br /><strong>{{item.estimatedTime}}</strong></p>
                                 </li>
                             </ul>
+                            <div style="display: flex; justify-content: center; padding-bottom: 5px;">
+                                <p (click)="itemClick(id)" *ngFor="let child of item[objectKeys(item)[0]]; let id = index" style="background: #eee; height: 15px; width: 15px; border-radius: 50%; margin-right: 5px; cursor:pointer"></p>
+                            </div>
                         </div>
                         <div class="one-fourth heightfix">
                             <div>
-                                <div class="price">{{item.price}} <small>GHC</small></div>
+                                <div class="price">{{item[objectKeys(item)[0]][id].price}}<small>GHC </small></div>
                                 <span class="meta">per passenger</span>
-                                <a href="javascript:void(0)" (click)="busType(item.name)" class="btn grey large">select</a>
+                                <a href="javascript:void(0)" (click)="busType(objectKeys(item)[0])" class="btn grey large">select</a>
                             </div>
                         </div>
                     </article>
